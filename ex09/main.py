@@ -34,5 +34,14 @@
 ##
 ##askName()
 
+##def even_n(n):
+##    if n % 2 == 0:
+##        return "even"
+##    else:
+##        return "try again"
+##    
+##print(even_n(6))
+
+
 
         
