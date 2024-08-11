@@ -1,3 +1,4 @@
+const { table } = require('console');
 const { type } = require('os');
 const readline = require('readline');
 
@@ -85,3 +86,13 @@ function fruitsIndex(){
 
 //fruitsIndex()
 
+async function tableOfNumber(){
+    let number = await ask("enter a number: ")
+    number = parseInt(number)
+
+    for (let i = 0; i < 11; i = i + 1){
+        console.log(`${number} x ${i} = ${number * i}`)
+    };
+}
+
+//tableOfNumber()
