@@ -15,3 +15,4 @@ const bookDataFruits = XLSX.utils.aoa_to_sheet(bookData);
 XLSX.utils.book_append_sheet(book, bookDataFruits, 'Fruits');
 
 XLSX.writeFile(book, 'shopping-spreadsheet-js.xlsx');
+
