@@ -6,7 +6,7 @@ book = openpyxl.Workbook()
 book.create_sheet('Info')
 
 info_page = book['Info']
-info_page.append(['Purchaser', 'Gender', 'Location', 'Product', 'Product ID', 'Price', 'Discount', 'Quantity Sold', 'Date', 'Time', 'Order ID', 'Stock Level', 'Quantity Returns'])
+info_page.append(['Purchaser', 'Gender', 'Location', 'Product', 'Product ID', 'Price', 'Price With Discount', 'Quantity Sold', 'Date', 'Time', 'Order ID', 'Stock Level', 'Quantity Returns'])
 
 names = ['Rafael', 'Lucas', 'Rodrigo', 'Sthefany', 'Rafaela', 'Cristiane', 
          'Fernanda', 'Patricia', 'Luis', 'João', 'Maria', 'Pedro', 'Ana', 
@@ -46,14 +46,19 @@ for i in range(500):
     locations_name = random.choice(locations)
     product_id = i + 1
     product_price = round(random.uniform(100, 1000), 2)
-    discountAccount = product_price * 0.08
-    discount = round(product_price - discountAccount, 2)
     quantity_sold = random.randint(100, 10000)
     date = random_date().strftime('%Y, %m, %d')
     time = random_time()
     stock_level = random.randint(100, 10000)
     quantity_returns = random.randint(5, 90)
     
+    apply_discount = random.choice([True, False])
+    if apply_discount:
+        discountAccount = product_price * 0.08
+        discount = round(product_price - discountAccount, 2)
+    else:
+        discount = None
+            
     while True:
         order_id = f"ORD-{random.randint(10000, 99999)}"
         if order_id not in unique_order_ids:
