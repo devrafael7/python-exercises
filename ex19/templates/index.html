@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white w-full h-screen">
+    <main class="w-full h-screen bg-gray-100 flex flex-col items-center">
+        <div class="w-full h-16 flex items-center rounded-b-full bg-blue-500 mb-7">
+        </div>
+        <h1 class="text-4xl font-extralight mb-5">Rafa's Form</h1>
+        <form class="px-5 py-2 w-full h-auto flex flex-col items-center gap-2" action="" method="POST">
+            <input class="w-full h-12 outline-none border border-gray-800 border-solid rounded-md w-full px-3" name="name_value" type="text" placeholder=Name" required>
+            <input class="w-full h-12 outline-none border border-gray-800 border-solid rounded-md w-full px-3" name="gender_type" type="text" placeholder="Gender" required>
+            <input class="w-full h-12 outline-none border border-gray-800 border-solid rounded-md w-full px-3" name="location" type="text" placeholder="Location" required>
+            <input class="w-full h-12 outline-none border border-gray-800 border-solid rounded-md w-full px-3" name="product_name" type="text" placeholder="Product" required>
+            <input class="w-full h-12 outline-none border border-gray-800 border-solid rounded-md w-full px-3" name="price_value" type="text" placeholder="Price" required>
+            <input class="w-full h-12 outline-none border border-gray-800 border-solid rounded-md w-full px-3" name="quantity" type="text" placeholder="Quantity" required>
+
+            <button class="w-full h-14 rounded-md bg-blue-500 text-lg text-white" type="submit">
+                Send it
+            </button>
+        </form>
+    </main>
+</body>
+</html>
