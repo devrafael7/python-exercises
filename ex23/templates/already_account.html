@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="w-full h-creen bg-gray-200 flex flex-col items-center">
+    <div class="w-full h-24 bg-blue-500 topDecoration ">
+    </div>
+
+    <main class="w-full h-auto px-3 py-3 flex flex-col items-center">
+        <h1 class="text-4xl mb-8 mt-4 font-extralight">Rafa's Form</h1>
+
+        <article class="w-full flex justify-between h-auto mb-4">
+
+            <a href="index.html">
+                <div class="w-auto h=auto px-2 py-2 bg-white rounded-sm shadow-md cursor-pointer text-sm">Create an account</div>
+            </a>
+
+            <a href="already_account.html">
+                <div class="w-auto h=auto px-2 py-2 bg-blue-400 text-white rounded-sm shadow-md cursor-pointer text-sm">Already have an account</div>
+            </a>
+        </article>
+
+
+        <form class="flex flex-col w-full h-auto gap-2" action="" method="POST">
+            <input name="already_nickname" class="w-full h-12 outline-none border border-blue-800 border-solid rounded-md px-3" type="text" placeholder="Nickname">
+            <input name="already_password" class="w-full h-12 outline-none border border-blue-800 border-solid rounded-md px-3" type="password" placeholder="Password">
+            <button class="w-full h-14 bg-blue-500 hover:bg-blue-700 text-white mb-7" type="submit">
+                Sign in
+            </button>
+            <figure class="w-full h-10 flex justify-center gap-7">
+                <img class="h-full w-auto cursor-pointer" src="icons/google.color.png" alt="">
+                <img class="h-full w-auto cursor-pointer" src="icons/facebook.color.png" alt="">
+                <img class="h-full w-auto cursor-pointer" src="icons/icons8-twitter-50.png" alt="">
+            </figure>
+        </form>
+    </main>
+</body>
+</html>
