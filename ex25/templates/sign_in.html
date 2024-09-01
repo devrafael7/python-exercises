@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="w-full h-screen px-7 flex jusitfy-center items-center">
+    <article class="bgImage">
+
+    </article>
+    <main class="w-full h-auto bg-white bg-opacity-30 z-40 relative rounded-2xl flex flex-col items-center pt-9 pb-3 shadow-sm">
+        <div class="w-full absolute -top-8 flex justify-center">
+            <img class="green-e rounded-full px-3 py-3 w-16 h-auto" src="{{ url_for('static', filename='icons/icons8-usuário-30.png')}}" alt="">
+        </div>
+       <h1 class="text-green-900 text-3xl font-light">Sign In</h1>
+
+       <form class="flex flex-col w-full px-7 py-4" action="/sign_in" method='POST'>
+        <input name="nickname" class="w-full h-12 rounded-md shadow-md outline-none text-black mb-2 bg-opacity-90 bg-white px-3" type="text" placeholder="Nickname">
+        <input name="password" class="w-full h-12 rounded-md shadow-md outline-none text-black mb-3 bg-opacity-90 bg-white px-3" type="password" placeholder="Password">
+        <button type="submit" class="w-full h-14 rounded-md shadow-md outline-none text-black mb-2 bg-opacity-90 green-e text-white text-xl font-extralight cursor-pointer">
+            Sign In
+        </button>
+        <div class="flex gap-3 px-2 items-center">
+            <input class="w-5 h-5 rounded-sm border-none outline-none" type="checkbox">
+            <p class="text-gray-100 font-light">Remember me</p>
+        </div>
+        
+       </form>
+
+       <div class="absolute -bottom-20 w-full h-7 py-2 border-t border-white border-solid flex justify-center">
+        <p class="text-white font-light">Don't have a account? <a href="{{url_for('sign_up')}}">SIGN UP</a></p>
+       </div>
+    </main>
+
+    
+</body>
+</html>

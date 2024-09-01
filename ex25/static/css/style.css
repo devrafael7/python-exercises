@@ -1,0 +1,16 @@
+.bgImage {
+    width: 100%;
+    height: 100vh;
+    background: url(https://i.pinimg.com/564x/61/68/40/6168400ae0b838f9074141e11f9753e6.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(30px);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.green-e {
+    background: #3baea0;
+}
