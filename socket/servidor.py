@@ -12,9 +12,13 @@ print(f"conexão estabelecida com{cliente_endereco}")
 
 dados = cliente_socket.recv(1024).decode()
 
-print(f"funcinou, mensagem {dados}")
+print(f"{dados}")
 
 cliente_socket.send(f'mensagem recebida pelo servidor'.encode())
+
+cliente_socket.close()
+servidor_socket.close()
+
 
 
 
