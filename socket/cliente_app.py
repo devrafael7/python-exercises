@@ -1,34 +1,26 @@
 import tkinter as tk
-##(Criação da janela principal)
 
-nome = ''
+nome = None
 
 def clienteApp_run():
     global nome
-    
-    root = tk.Tk()
-    root.title("GDP")
 
-    root.geometry("500x500")
-    root.config(bg="white")
-
-    ##(Título)
-
-    titulo_label = tk.Label(root, text="Qual eletrônico você quer? ")
-    titulo_label.pack(pady=10)
-
-    ##(Entrada do texto)
-
-    entrada = tk.Entry(root, width=30)
-    entrada.pack(pady=10)
-
-    ##(Configuração do botão)
-
-    def clicar_botao():
+    def enviar():
         global nome
-        nome = entrada.get()
+        nome = input_field.get()
+        root.destroy()  
 
-    botao = tk.Button(root, text="Enviar", command=clicar_botao)
-    botao.pack(pady=10)
+    root = tk.Tk()
+    root.title("Controle de Estoque - Cliente")
+    root.geometry("300x200")
+
+    label = tk.Label(root, text="Digite o nome do produto:", bg="white")
+    label.pack(pady=20)
+
+    input_field = tk.Entry(root, width=20, font=('Arial', 16))
+    input_field.pack(pady=10)
+
+    btn = tk.Button(root, text="Enviar", command=enviar)
+    btn.pack(pady=10)
 
     root.mainloop()

@@ -9,3 +9,5 @@ mensagem = cliente_app.nome
 cliente_socket.send(mensagem.encode())
 
 dados = cliente_socket.recv(1024).decode()
+
+cliente_socket.close()
