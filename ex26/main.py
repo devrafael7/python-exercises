@@ -1,34 +1,34 @@
 import openpyxl
 import tkinter as tk
 
-book = openpyxl.load_workbook('Estoque (1).xlsx')
-main_page = book.active
+arquivo_excel = openpyxl.load_workbook('Estoque (1).xlsx')
+pagina = arquivo_excel.active
 
-dados = input('digite algo: ')
+primeira_linha = []
+for cell in pagina[1]:
+    primeira_linha.append(cell.value)
+    
 
-
-todas_linhas = []
-
-for cada_linha in main_page.iter_rows(min_row=2, values_only=True):
+produto = input('digite o produto: ')
+linhas_produto = []
+for cada_linha in pagina.iter_rows(min_row=2, values_only=True):
     linha_encontrada = False
     for cell in cada_linha:
-        if dados in str(cell):
+        if produto in str(cell):
             linha_encontrada = True
             break
-        if linha_encontrada:
-            todas_linhas.append(cada_linha)
-        else:
-            print('deu merda chef')
-        
+    
+    if linha_encontrada:
+        linhas_produto.append(cada_linha)
 
-print(todas_linhas)
-            
-        
+estoque_total = 0
 
+for quantidade in linhas_produto:
+    estoque_total += quantidade[4]
 
-
-
-
+print(primeira_linha)
+print(linhas_produto)
+print(estoque_total)
 
 
 
@@ -49,6 +49,41 @@ print(todas_linhas)
 
 
 
+
+
+
+
+
+
+
+##import openpyxl
+##import tkinter as tk
+##
+##book = openpyxl.load_workbook('Estoque (1).xlsx')
+##main_page = book.active
+##
+##dados = input('digite algo: ')
+##
+##
+##first_row = []
+##for cell in main_page[1]:
+##    first_row.append(cell.value)
+##    
+##todas_linhas = []
+##
+##for cada_linha in main_page.iter_rows(min_row=2, values_only=True):
+##    linha_encontrada = False
+##    for cell in cada_linha:
+##        if dados in str(cell):
+##            linha_encontrada = True
+##            break
+##        
+##    if linha_encontrada:
+##        todas_linhas.append(cada_linha)
+##        
+##print(first_row)
+##print(todas_linhas)
+##
 
 ##import openpyxl
 ##import tkinter as tk
