@@ -14,22 +14,35 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as servidor_socket:
     dados = cliente_socket.recv(1024).decode()
 
     planilha_produtos = openpyxl.load_workbook('Estoque (1).xlsx').active
-    primeira_linha = [str(cell.value) for cell in planilha_produtos[1]]
+    primeira_linha = [cell.value for cell in planilha_produtos[1]]
     
-    linhas_encontradas = [
-        row for row in planilha_produtos.iter_rows(min_row=2, values_only=True) 
-        if any(dados.lower() in str(cell).lower() for cell in row)
-    ]
-    
-    quantidade_total = sum(row[4] for row in linhas_encontradas)
-    linhas_texto = "\n".join(map(str, linhas_encontradas)) if linhas_encontradas else "Não encontrado."
+    linhas_encontradas = []
 
-    servidor_app.adicionar_primeira_linha(
+    for cada_linha in planilha_produtos.iter_rows(min_row=2, values_only=True):
+        linha_encontrada = False 
+        for cell in cada_linha:
+            if dados in str(cell):
+                linha_encontrada = True
+                break  
+        if linha_encontrada:
+            linhas_encontradas.append(cada_linha)
+    
+    quantidade_total = 0
+    
+    for coluna_quantidade in linhas_encontradas:
+        quantidade_total += coluna_quantidade[4]
+
+    linhas_texto = ''
+    
+    if linhas_encontradas:
+        for linha in linhas_encontradas:
+            linhas_texto += str(linha) + '\n'
+
+    servidor_app.adicionar_valores_app(
         f"{primeira_linha}\n\n{linhas_texto}\n\nTotal de Quantidade de Estoque: {quantidade_total}"
     )
 
     cliente_socket.send('Os dados foram entregues'.encode())
-    
     servidor_app.root.mainloop()
 
 
