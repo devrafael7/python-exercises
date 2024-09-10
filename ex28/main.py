@@ -19,3 +19,35 @@
 ##    print('odd')
 ##else:
 ##    print('even')
+
+##import openpyxl
+##
+##book = openpyxl.load_workbook('Estoque (1).xlsx')
+##main_page = book.active
+##
+##first_row = []
+##for celulas in main_page[1]:
+##    first_row.append(celulas.value)
+##    
+##dados = input('digite: ')
+##
+##produtos = []
+##for cada_linha in main_page.iter_rows(min_row=2, values_only=True):
+##    encontrado = False
+##    for celulas in cada_linha:
+##        if dados in str(celulas):
+##            encontrado = True
+##            break
+##    
+##    if encontrado:
+##        produtos.append(cada_linha)
+##
+##estoque_total = 0
+##
+##for quantidade in produtos:
+##    estoque_total += quantidade[4]
+##        
+##    
+##print(first_row)
+##print(produtos)
+##print(estoque_total)
