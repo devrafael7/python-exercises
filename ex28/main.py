@@ -51,3 +51,13 @@
 ##print(first_row)
 ##print(produtos)
 ##print(estoque_total)
+
+##import geocoder
+##
+### Obter a localização atual pelo endereço IP
+##localizacao = geocoder.ip('me')
+##
+##cidade = localizacao.city
+##
+### Imprimir a localização
+##print(f"Sua localização atual é {cidade}")
