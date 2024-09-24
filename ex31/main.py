@@ -17,7 +17,7 @@ def random_time():
 
 yesterday = datetime.now() - timedelta(days=1)
 
-for i in range(200):
+for i in range(2000):
     
     ##while True:
     ##    product_id = f"PD-{random.randint(1000, 10000)}"
