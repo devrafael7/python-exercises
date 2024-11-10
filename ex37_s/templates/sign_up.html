@@ -10,25 +10,26 @@
 <body class="w-full h-min-full pt-8 px-3 flex flex-col">
     <h1 class="text-white text-5xl font-semibold mb-10 px-1">Let's get <br>started </h1>
 
-    <div class="signInInputsDiv w-full h-auto flex flex-col gap-4">
+    <form action="" method="POST" class="signInInputsDiv w-full h-auto flex flex-col gap-4">
         <div class="w-full rounded-full h-18 bg-gray-800 border border-solid border-gray-600 flex items-center px-6 gap-6">
             <img class="emailIcon w-7 h-7 opacity-80" src="../static/icons/icons8-gmail-logo-50.png" alt="">
-            <input class="w-full h-full bg-gray-800 outline-none text-white text-lg" type="email" placeholder="E-mail">
+            <input required name="email" class="w-full h-full bg-gray-800 outline-none text-white text-lg" type="email" placeholder="E-mail">
         </div>
         <div class="w-full rounded-full h-18 bg-gray-800 border border-solid border-gray-600 flex items-center px-6 gap-6">
             <img class="passwordIcon w-7 h-6 opacity-80" src="../static/icons/icons8-trancar-50.png" alt="">
-            <input class="w-full h-full bg-gray-800 outline-none text-white text-lg" type="password" placeholder="Password">
+            <input required class="w-full h-full bg-gray-800 outline-none text-white text-lg" type="password" placeholder="Password">
         </div>
         <div class="w-full rounded-full h-18 bg-gray-800 border border-solid border-gray-600 flex items-center px-6 gap-6">
             <img class="passwordIcon w-7 h-6 opacity-80" src="../static/icons/icons8-trancar-50.png" alt="">
-            <input class="w-full h-full bg-gray-800 outline-none text-white text-lg" type="password" placeholder="Confirm Password">
+            <input required name="password" class="w-full h-full bg-gray-800 outline-none text-white text-lg" type="password" placeholder="Confirm Password">
         </div>
-    </div>
+        <button type="submit" class="w-full rounded-full h-18 bg-white text-black font-semibold text-xl mt-12">
+            Sign Up
+        </button>
+    </form>
 
     
-    <button class="w-full rounded-full h-18 bg-white text-black font-semibold text-xl mt-12">
-        Sign Up
-    </button>
+
 
     
     <div class="w-full flex justify-center items-center text-gray-400 my-4 font-semibold">
