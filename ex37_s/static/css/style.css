@@ -11,3 +11,11 @@ body {
 .divLoginBtns {
     width: 93vw;
 }
+
+.whiteLoguinBtn {
+    transition: .4s ease;
+}
+
+.WLB_left_transition {
+    margin-left: 11.3rem;
+}
