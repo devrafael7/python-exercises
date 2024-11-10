@@ -21,9 +21,17 @@ body {
 }
 
 .h-18 {
-    height: 72px;
+    height: 70px;
 }
 
 .bg-soft-black {
     background: #14141b;
+}
+
+.emailIcon {
+    filter: invert(1); 
+}
+
+.passwordIcon {
+    filter: invert(1);
 }
