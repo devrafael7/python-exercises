@@ -19,3 +19,11 @@ body {
 .WLB_left_transition {
     margin-left: 11.3rem;
 }
+
+.h-18 {
+    height: 72px;
+}
+
+.bg-soft-black {
+    background: #14141b;
+}
