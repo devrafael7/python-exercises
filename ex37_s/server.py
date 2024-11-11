@@ -5,22 +5,10 @@ import openpyxl
 
 app = Flask(__name__)
 
-register_db = 'register.xlsx'
+register_db = 'register_db.xlsx'
 
-if os.path.exists(register_db):
-    book = openpyxl.load_workbook(register_db)
-    if 'register' in book.sheetnames:
-        register_page = book['register']
-    else:
-        register_page = book.create_sheet('register')
-        register_page.append(['Nickname', 'E-mail', 'Password'])
-        
-else:
-    book = openpyxl.Workbook()
-    register_page = book.active
-    register_page.title = 'register'
-    register_page.append(['Nickname', 'E-mail', 'Password'])
-    book.save(register_page)
+book = openpyxl.load_workbook(register_db)
+register_page = book.active
 
 @app.route('/', methods=['GET', 'POST'])
 def sign_up():
@@ -42,9 +30,11 @@ def sign_up():
         
         else:
             register_page.append([email, password, register_date, register_time])
+            book.save(register_db)
             return render_template('index.html')
         
     return render_template('sign_up.html')
+
 
 
 
