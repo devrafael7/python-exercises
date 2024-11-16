@@ -1,5 +1,5 @@
 
-// Loguin button variables
+// LOGUIN BUTTON VARIABLES
 
 const divLoginBtns = document.querySelector('.divLoginBtns')
 const whiteLoguinBtn = document.querySelector('.whiteLoguinBtn')
@@ -9,7 +9,7 @@ const signInBtn = document.querySelector('.signInBtn')
 const signInText = document.querySelector('.signInText')
 const signUpText = document.querySelector('.signUpText')
 
-// Loguin Button Funcionality
+// LOGUIN BUTTON FUNCIONALITY
 
 signUpBtn.addEventListener('click', ()=>{
     whiteLoguinBtn.classList.add('WLB_left_transition')
@@ -29,7 +29,7 @@ signInBtn.addEventListener('click', ()=>{
     signUpText.classList.add('text-white')
 })
 
-// Page navigation delay
+// PAGE NAVIGATION DELAY
 
 signUpBtn.addEventListener('click', function(event){
     event.preventDefault();
@@ -47,9 +47,23 @@ signInBtn.addEventListener('click', function(event){
     }, 400);
 });
 
+// REGISTER STATUS
 
+const email_exists_on_db = "{{ email_exists_on_db | tojson }}";
+    console.log(email_exists_on_db);
 
-
+async function checkEmail(email) {
+    const response = await fetch('/check_email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email })
+    });
+    const data = await response.json();
+    return data.email_exists;
+}
+    
 
 
 

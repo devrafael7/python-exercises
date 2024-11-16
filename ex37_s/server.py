@@ -1,6 +1,5 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from datetime import datetime
-import os
 import openpyxl
 
 app = Flask(__name__)
@@ -21,13 +20,15 @@ def sign_up():
         
         email_exists = False
         
-        for row in register_page.iter_rows(values_only=True):
-            if row[0] == email:
-                email_exists = True
+        def check_email():
+            for row in register_page.iter_rows(values_only=True):
+                if row[0] == email:
+                    email_exists = True
+            return jsonify({'email_exists': email_exists})
         
         if email_exists:
-            print('Already have an accout was called')
-        
+            return render_template('sign_up.html', email_exists_on_db = email_exists)
+         
         else:
             register_page.append([email, password, register_date, register_time])
             book.save(register_db)
