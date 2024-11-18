@@ -49,22 +49,5 @@ signInBtn.addEventListener('click', function(event){
 
 // REGISTER STATUS
 
-const email_exists_on_db = "{{ email_exists_on_db | tojson }}";
-    console.log(email_exists_on_db);
-
-async function checkEmail(email) {
-    const response = await fetch('/check_email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: email })
-    });
-    const data = await response.json();
-    return data.email_exists;
-}
-    
-
-
 
 
