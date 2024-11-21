@@ -48,9 +48,3 @@ signInBtn.addEventListener('click', function(event){
 });
 
 // REGISTER STATUS
-
-window.onload = function() {
-    if (!document.getElementById('myElement').classList.contains('hidden')) {
-        alert('Email já registrado!');
-    }
-}
