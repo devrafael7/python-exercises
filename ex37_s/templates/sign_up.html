@@ -42,10 +42,15 @@
         <h5 class="text-white font-normal">Google</h5>
     </div>
 
-    <div class="w-full flex justify-center items-center my-6">
-        <a class="text-gray-400" href="">Already have an account? <span class="text-white font-normal">Login</span>
+    <div class="w-full flex justify-center items-center my-6 px-3">
+        <div id="myElement" class="{{ 'hidden' if not show_element else '' }} w-full h-12 border-2 border-red-500 rounded-md transition-all">
+
+        </div>
+        <a class="text-gray-400 absolute" href="">Already have an account? <span class="text-white font-normal">Login</span>
         </a>
     </div>
+
+  
 
 
     <script src="/ex37_s/static/js/script.js"></script>

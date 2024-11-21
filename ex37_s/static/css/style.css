@@ -35,3 +35,7 @@ body {
 .passwordIcon {
     filter: invert(1);
 }
+
+#myElement {
+    transition: .4s ease;
+}
