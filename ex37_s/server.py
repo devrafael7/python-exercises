@@ -34,5 +34,26 @@ def sign_up():
         
     return render_template('sign_up.html', email_exists_on_db=False, show_element=show_element)
 
+
+@app.route('/sign_in', methods=['GET', 'POST'])
+def sign_in():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        
+        valid_user = False
+        
+        for row in register_page.iter_rows(values_only=True):
+            if row[0] == email and row[1] == password:
+                valid_user = True
+                break
+        
+        if valid_user:
+            return render_template('index.html')
+        else:
+            return render_template('sign_in.html', login_failed=True)  # Exemplo de variável para erro
+        
+    return render_template('sign_in.html')  # Corrigido: adicionado return
+
 if __name__ == '__main__':
     app.run(debug=True)
