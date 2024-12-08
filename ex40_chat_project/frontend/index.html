@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-gray-200 w-full h-screen">
+    
+    <section class="container w-full h-full flex justify-center items-center">
+
+        <section class="login w-full h-screen flex flex-col items-center justify-center bg-gray-100 fixed z-20 hidden">
+            <h1 class="text-2xl font-semibold mb-6">Login</h1>
+
+            <form class="flex flex-col gap-2" action="">
+                <input type="text" class="loginInput rounded-full h-10 px-5 shadow-md outline-none" placeholder="Your Nickname" required />
+                <button type="submit" class="loginBtn w-full h-10 rounded-full bg-green-400 text-white font-normal shadow-md">Enter chat</button>
+            </form>
+        </section>
+
+        <section class="chat w-full h-screen bg-blue-100 flex flex-col justify-between">
+            <section class="messages_section w-full h-auto flex flex-col gap-3 px-8 py-4">
+                <div class="max-w-xs h-auto px-3 py-3 bg-white rounded-md shadow-md self-end ml-10">
+                    Eai manda o papo filhao
+                </div>
+                <div class="selfMessage max-w-xs h-full px-3 py-3 bg-white rounded-md shadow-md self-start flex flex-col justify-center items-start">
+                    Olá mundo aaaaaaaaaaaaaaaaaamsmaassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                </div>
+            </section>
+        </section>
+
+
+    </section>
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
