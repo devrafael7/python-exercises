@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-gray-100 h-screen flex items-center justify-center">
-    <section class="hidden login w-full h-screen flex flex-col justify-center items-center">
+    <section class=" login w-full h-screen flex flex-col justify-center items-center">
 
         <div class="fixed -top-16 -left-16 h-40 w-40 rounded-full bg-green-400">
 
@@ -18,19 +18,19 @@
         <h1 class="text-3xl font-semibold mb-5">Login</h1>
 
     
-        <form class="w-5/6 h-auto flex flex-col gap-y-3" action="">
-            <input class="outline-none h-14 px-5 rounded-md shadow-md text-lg" type="text" placeholder="Your Name">
-            <button type="submit" class="w-full h-14 rounded-md shadow-md bg-green-400 text-white text-lg font-semibold hover:bg-gray-100 hover:shadow-lg hover:text-black">Enter Chat</button>
+        <form class="loginForm w-5/6 h-auto flex flex-col gap-y-3" action="">
+            <input class="loginInput outline-none h-14 px-5 rounded-md shadow-md text-lg" type="text" placeholder="Your Name" required>
+            <button type="submit" class="loginButton w-full h-14 rounded-md shadow-md bg-green-400 text-white text-lg font-semibold hover:bg-gray-100 hover:shadow-lg hover:text-black">Enter Chat</button>
         </form>
 
-        <div class="fixed -bottom-20 -right-20 h-80 w-80 rounded-full bg-green-400">
+        <div class="fixed -bottom-20 -right-20 h-64 w-64 rounded-full bg-green-400">
     
         </div>
 
     </section>
 
-    <section class="chatSection w-full h-full flex flex-col justify-between">
-        <section class="chatMessages pb-24 flex flex-col justify-end space-y-4 w-full px-4 pt-4">
+    <section class="hidden chatSection w-full h-screen flex flex-col justify-between flex-grow">
+        <section class="chatMessages flex flex-col justify-end space-y-4 w-full px-4 pt-4 pb-24">
 
             <article class="self-end bg-green-500 text-white py-2 px-4 rounded-t-xl rounded-bl-xl max-w-xs break-words text-lg shadow-md">
                 Eai, como vcx ta??
@@ -40,18 +40,25 @@
                 <span class="block font-bold mb-1">Rafinha</span>
                 Eai, como vcx ta?? 
             </article>
+
         </section>
 
-        <form class="fixed bottom-0 left-0 w-full h-28 bg-gray-200 flex px-3 py-2 items-center gap-x-2 pb-8" action="">
-            <input class="flex-grow h-14 bg-white shadow-sm rounded-full px-5 text-lg outline-none" type="text">
+        <form class="fixed bottom-0 left-0 w-full h-20 flex px-3 py-2 items-center gap-x-2 bg-gray-100" action="">
+            <input class="flex-grow h-14 bg-white shadow-md rounded-full px-5 text-lg outline-none" type="text">
             <span class="text-lg font-normal w-14 h-14 rounded-full bg-green-400 flex justify-center items-center px-3 py-2 text-black">
-                Send
+                <img class="opacity-90" src="./icons/icons8-enviado-96.png" alt="">
             </span>
         </form>
 
     </section>
 
 
+    <style>
+        * {
+            transition: .2s ease;
+        }
+
+    </style>
     <script src="./js/script.js"></script>
 </body>
 </html>
