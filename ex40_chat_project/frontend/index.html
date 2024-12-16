@@ -32,22 +32,26 @@
     <section class="hidden chatSection w-full h-screen flex flex-col justify-between flex-grow">
         <section class="chatMessages flex flex-col justify-end space-y-4 w-full px-4 pt-4 pb-24">
 
-            <article class="hidden self-end bg-green-500 text-white py-2 px-4 rounded-t-xl rounded-bl-xl max-w-xs break-words text-lg shadow-md">
+            <!--
+            <article class="selfMessage hidden self-end bg-green-500 text-white py-2 px-4 rounded-t-xl rounded-bl-xl max-w-xs break-words text-lg shadow-md">
                 Eai, como vcx ta??
             </article>
 
-            <article class="hidden self-start bg-gray-200 text-black py-2 px-4 rounded-t-xl rounded-br-xl max-w-xs break-words text-lg shadow-md">
-                <span class="block font-bold mb-1">Rafinha</span>
+            <article class="messageOther self-start bg-gray-200 text-black py-2 px-4 rounded-t-xl rounded-br-xl max-w-xs break-words text-lg shadow-md">
+                <span class="messageSender block font-bold mb-1">Rafinha</span>
                 Eai, como vcx ta?? 
+                
             </article>
+            -->
 
         </section>
 
-        <form class="fixed bottom-0 left-0 w-full h-20 flex px-3 py-2 items-center gap-x-2 bg-gray-100" action="">
-            <input class="flex-grow h-14 bg-white shadow-md rounded-full px-5 text-lg outline-none" type="text">
-            <span class="text-lg font-normal w-14 h-14 rounded-full bg-green-400 flex justify-center items-center px-3 py-2 text-black">
+
+        <form class="chatForm fixed bottom-0 left-0 w-full h-20 flex px-3 py-2 items-center gap-x-2 bg-gray-100" action="">
+            <input class="chatInput flex-grow h-14 bg-white shadow-md rounded-full px-5 text-lg outline-none" type="text">
+            <button type="submit" class="text-lg font-normal w-14 h-14 rounded-full bg-green-400 flex justify-center items-center px-3 py-2 text-black">
                 <img class="opacity-90" src="./icons/icons8-enviado-96.png" alt="">
-            </span>
+            </button>
         </form>
 
     </section>
